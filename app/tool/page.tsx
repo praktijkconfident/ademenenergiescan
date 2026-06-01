@@ -325,10 +325,16 @@ export default function Scan() {
     );
   }
 
-  const bySec = sections.map((sec, si) => ({
-    label: sec,
-    qs: questions.map((q, i) => ({ ...q, i })).filter(q => q.sec === si),
-  }));
+  const bySec = (() => {
+    let counter = 0;
+    return sections.map((sec, si) => ({
+      label: sec,
+      qs: questions
+        .map((q, i) => ({ ...q, i }))
+        .filter(q => q.sec === si)
+        .map(q => ({ ...q, displayNum: ++counter })),
+    }));
+  })();
 
   return (
     <div style={s.wrap}>
@@ -350,9 +356,9 @@ export default function Scan() {
       {bySec.map((sec, si) => (
         <div key={si}>
           <div style={s.secHdr}>{sec.label}</div>
-          {sec.qs.map(({ text, i }) => (
+          {sec.qs.map(({ text, i, displayNum }) => (
             <div key={i} style={s.qBlock(answers[i] !== undefined, errors.includes(i))}>
-              <div style={s.qNum}>Vraag {i + 1}</div>
+              <div style={s.qNum}>Vraag {displayNum}</div>
               <div style={s.qText}>{text}</div>
               <div style={s.opts}>
                 {[0, 1, 2, 3].map(v => {
