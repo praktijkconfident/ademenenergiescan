@@ -5,13 +5,14 @@
    ══════════════════════════════════════════════════════════════ */
 
 :root {
-  --color-primair:      #3b5633;   /* ← jouw hoofdkleur     */
-  --color-achtergrond:  #fcebdc;   /* ← achtergrondkleur    */
-  --color-tekst:        #2a3a3c;   /* ← tekstkleur          */
-  --color-accent-1:     #9e3816;   /* ← accentkleur 1       */
-  --color-accent-2:     #d56119;   /* ← accentkleur 2       */
-  --color-accent-3:     #758d69;   /* ← accentkleur 3       */
-  --color-wit:          #ffffff;
+  --color-cream:      #fcebdc;
+  --color-light-bg:   #f4c293;
+  --color-dark-slate: #2a3a3c;
+  --color-dark-red:   #9e3816;
+  --color-dark-green: #3b5633;
+  --color-mid-green:  #758d69;
+  --color-orange:     #d56119;
+  --color-peach:      #e8926a;
 }
 
 
